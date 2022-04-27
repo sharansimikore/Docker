@@ -1,0 +1,87 @@
+Docker -- Applications are today converted  in to docker images
+                Dockerhub
+
+DockerFile ------- DockerImage----------Container
+
+Installation of Docker
+--------------------
+
+centos/linux ami 
+----------------
+yum install docker
+
+ubuntu
+------
+apt install docker.io
+
+To check the docker version
+-----------------------------
+docker -v
+
+To know more information about docker
+------------------------------------
+docker info
+
+To know where docker is installed
+------------------------------------
+which docker
+
+
+Go to DockerHub
+-------------------
+To pull/download the docker images locally
+
+docker pull imagename
+
+To view the downloaded docker images
+------------------------------------
+docker images
+
+To run the docker image as a container
+-------------------------------------
+docker run -idt --name container-name image-name
+
+To get inside a docker container
+---------------------------------------
+docker exec -it container-id bash
+
+To view the Running Containers
+------------------------------------------
+docker ps
+
+
+To view the Stopped + Running container
+--------------------------------------------
+docker ps -a
+
+
+To stop a Running Docker container
+----------------------------------------------
+docker stop container-id
+
+
+To start a Stopped Docker container
+-----------------------------------------------
+docker start container-id
+
+
+To inspect a Docker container
+----------------------------------------------
+docker inspect container-d
+
+
+To delete a container image, in case if it's not in use
+------------------------------------------------------
+docker rmi image-id
+
+To remove a container
+----------------------
+docker rm container-id
+
+vi Dockerfile 
+
+FROM ubuntu:latest
+MAINTAINER becomedevops99@gmail.com
+RUN apt update
+RUN apt install git -y
+RUN apt install nginx -y
