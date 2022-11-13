@@ -29,6 +29,41 @@ Attach volumes to containers
 on deleting container volume doesnt get deleted
 
 
+* Creatingb a Volume
+--------------------------------
+
+docker volume create vol1
+
+* To check the Docker volume list
+------------------------------
+docker volume list (ls)
+
+* Run any conatiner
+---------------------
+docker run -idt --name con-name image-name
+
+* To get inside a conatiner 
+---------------------------
+docker exec -it cont-id bash
+
+* create a folder inside the conatiner, stop and remove the conatiner and observe that the folder created 
+inside the conatiner is lost so we need to attach a volume to a conatiner
+
+* docker volume ls
+* docker run -idt -v vol1:/mydata conati-name
+* docker exec -it cont-id bash
+
+* Now create a folder inside the conatiner, stop and remove the conatiner 
+* docker volume ls
+* docker volume inspect
+* cd /var/lib/docker/volumes/vol1
+
+Inside the _data directory a file is saved which we created in conatiner
+
+
+
+
+
 FROM ubuntu
 VOLUME ["/myvolume"]
 
