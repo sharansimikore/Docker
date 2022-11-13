@@ -1,1 +1,11 @@
+FROM nginx:alpine
+MAINTAINER SHaran
+COPY . /usr/share/nginx/html
+
+It also requires a html.index file  and then build this using
+
+docker build -i image-name . (to build from current directory)
+
+docker run -idt -p 80:80 image-name [host port: Container port]
+
 
