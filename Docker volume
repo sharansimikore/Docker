@@ -46,6 +46,8 @@ docker run -idt --name con-name image-name
 ---------------------------
 docker exec -it cont-id bash
 
+Case 1:
+--------
 * create a folder inside the conatiner, stop and remove the conatiner and observe that the folder created 
 inside the conatiner is lost so we need to attach a volume to a conatiner
 
@@ -53,14 +55,20 @@ inside the conatiner is lost so we need to attach a volume to a conatiner
 * docker run -idt -v vol1:/mydata conati-name
 * docker exec -it cont-id bash
 
-* Now create a folder inside the conatiner, stop and remove the conatiner 
+* Now a folder inside the conatiner with name mydata is available, stop and remove the conatiner 
 * docker volume ls
 * docker volume inspect
 * cd /var/lib/docker/volumes/vol1
 
 Inside the _data directory a file is saved which we created in conatiner
+ 
+ Case 2:
+ -------
+* docker run -idt -v vol1:/data conati-name
+* docker exec -it cont-id bash
+* Now a folder inside the conatiner with name data is available
 
-
+* Get into that folder create files and stop, remove the container and inspect volume and check that all files should be available in the vol1
 
 
 
